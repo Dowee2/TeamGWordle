@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1650571604 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/model/WordleGame.cpp
+	"WordleGame.h"
+
+1650572129 /home/rjones47/Desktop/HelloWorld/TeamGWordle/model/WordleGame.h
+
+1650572435 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/main.cpp
+	<FL/Fl.H>
+	<FL/Fl_Window.H>
+	<FL/Fl_Box.H>
+	"WordleWindow.h"
+
+1650606149 /home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleWindow.h
+	<FL/Fl.H>
+	<FL/Fl_Window.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Round_Button.H>
+	<FL/Fl_Output.H>
+	<FL/Fl_Text_Buffer.H>
+	<FL/Fl_Text_Display.H>
+	<FL/Fl_Button.H>
+	<vector>
+	<string>
+	<iostream>
+
+1650606152 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleWindow.cpp
+	"WordleWindow.h"
+
