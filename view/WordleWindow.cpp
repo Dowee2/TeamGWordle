@@ -1,4 +1,9 @@
 #include "WordleWindow.h"
+
+#include "../model/WordleGame.h"
+
+using namespace Wordle;
+
 namespace view {
 WordleWindow::WordleWindow(int width, int height, const char* title) : Fl_Window(width, height, title)
 {
@@ -20,6 +25,7 @@ WordleWindow::WordleWindow(int width, int height, const char* title) : Fl_Window
 
     Dictionary* words = new Dictionary();
     words->Debug();
+    WordleGame* game = new WordleGame(5);
     end();
 }
 

@@ -14,7 +14,8 @@ class Dictionary
         virtual ~Dictionary();
 
 
-        vector<string> getVocbulary(int wordlength);
+        vector<string> getAllWordsOfLength(int wordlength);
+
 
         void Debug();
 

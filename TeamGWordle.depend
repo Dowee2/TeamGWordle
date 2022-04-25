@@ -32,15 +32,18 @@
 	<FL/Fl_Box.H>
 	"view/WordleWindow.h"
 
-1650845766 source:/home/amaynar2/Downloads/TeamGWordle/model/WordleGame.cpp
+1650915902 source:/home/amaynar2/Downloads/TeamGWordle/model/WordleGame.cpp
 	"WordleGame.h"
+	<iostream>
 
-1650845766 /home/amaynar2/Downloads/TeamGWordle/model/WordleGame.h
+1650915617 /home/amaynar2/Downloads/TeamGWordle/model/WordleGame.h
+	"Dictionary.h"
 
-1650859820 source:/home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.cpp
+1650915759 source:/home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.cpp
 	"WordleWindow.h"
+	"../model/WordleGame.h"
 
-1650859253 /home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.h
+1650913854 /home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.h
 	<FL/Fl.H>
 	<FL/Fl_Window.H>
 	<FL/Fl_Group.H>
@@ -54,11 +57,11 @@
 	<string>
 	<iostream>
 
-1650860183 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.cpp
+1650914222 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.cpp
 	"Dictionary.h"
 	<bits/stdc++.h>
 
-1650859736 /home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.h
+1650914231 /home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.h
 	<vector>
 	<map>
 

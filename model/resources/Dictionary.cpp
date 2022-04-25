@@ -44,7 +44,7 @@ void Dictionary::addWord(string& word){
     }
 }
 
-vector<string> Dictionary::getVocbulary(int wordlength)
+vector<string> Dictionary::getAllWordsOfLength(int wordlength)
 {
     return this->vocabulary.at(wordlength);
 }
