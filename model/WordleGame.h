@@ -11,6 +11,7 @@ class WordleGame
     protected:
 
     private:
+        Dictionary* dictionary;
 };
 
 #endif // WORDLEGAME_H

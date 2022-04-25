@@ -26,3 +26,39 @@
 1650606152 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleWindow.cpp
 	"WordleWindow.h"
 
+1650859806 source:/home/amaynar2/Downloads/TeamGWordle/main.cpp
+	<FL/Fl.H>
+	<FL/Fl_Window.H>
+	<FL/Fl_Box.H>
+	"view/WordleWindow.h"
+
+1650845766 source:/home/amaynar2/Downloads/TeamGWordle/model/WordleGame.cpp
+	"WordleGame.h"
+
+1650845766 /home/amaynar2/Downloads/TeamGWordle/model/WordleGame.h
+
+1650859820 source:/home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.cpp
+	"WordleWindow.h"
+
+1650859253 /home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.h
+	<FL/Fl.H>
+	<FL/Fl_Window.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Round_Button.H>
+	<FL/Fl_Output.H>
+	<FL/Fl_Text_Buffer.H>
+	<FL/Fl_Text_Display.H>
+	<FL/Fl_Button.H>
+	"Dictionary.h"
+	<vector>
+	<string>
+	<iostream>
+
+1650860183 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.cpp
+	"Dictionary.h"
+	<bits/stdc++.h>
+
+1650859736 /home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.h
+	<vector>
+	<map>
+

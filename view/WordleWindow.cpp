@@ -17,6 +17,9 @@ WordleWindow::WordleWindow(int width, int height, const char* title) : Fl_Window
         }
     }
     createKeyboard();
+
+    Dictionary* words = new Dictionary();
+    words->Debug();
     end();
 }
 

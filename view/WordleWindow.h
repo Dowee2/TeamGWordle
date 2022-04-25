@@ -10,6 +10,8 @@
 #include <FL/Fl_Text_Display.H>
 #include <FL/Fl_Button.H>
 
+#include "Dictionary.h"
+
 #include <vector>
 #include <string>
 #include <iostream>
