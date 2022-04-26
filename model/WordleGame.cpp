@@ -1,6 +1,6 @@
 #include "WordleGame.h"
 #include <iostream>
-#include "guessChecker.h"
+#include "../model/resources/guessChecker.h"
 #include <vector>
 
 namespace Wordle

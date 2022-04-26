@@ -1,7 +1,10 @@
 #ifndef WORDLEGAME_H
 #define WORDLEGAME_H
 
-#include "Dictionary.h"
+#include "../model/resources/Dictionary.h"
+#include <vector>
+#include <string>
+#include <iostream>
 using namespace std;
 
 namespace Wordle

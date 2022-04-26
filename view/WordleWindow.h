@@ -10,13 +10,13 @@
 #include <FL/Fl_Text_Display.H>
 #include <FL/Fl_Button.H>
 
-#include "Dictionary.h"
+//#include "../model/resources/Dictionary.h"
 
 #include <vector>
 #include <string>
 #include <iostream>
 using namespace std;
-
+//using namespace Wordle;
 namespace view
 {
 class WordleWindow : public Fl_Window
@@ -24,7 +24,8 @@ class WordleWindow : public Fl_Window
     public:
         WordleWindow(int width, int height, const char* title);
         virtual ~WordleWindow();
-
+        Fl_Input* activeInput;
+        int activeNumber;
 
 
     protected:
@@ -35,8 +36,11 @@ class WordleWindow : public Fl_Window
         Fl_Group *sortingRadioGroup;
         vector<string> qwertyAlphabet = {"Q", "W", "E" ,"R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Z", "X","C", "V", "B", "N", "M"};
         string* keyboardSortingLabels[26];
-        //static void cbTextChanged(Fl_Widget* widget, void* data);
+        static void cbTextChanged(Fl_Widget* widget, void* data);
+        static void cbButton(Fl_Widget* widget, void* data);
         void createKeyboard();
+
+
 };
 }
 #endif // WORDLEWINDOW_H

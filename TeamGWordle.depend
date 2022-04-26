@@ -1,16 +1,22 @@
 # depslib dependency file v1.0
-1650571604 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/model/WordleGame.cpp
+1650949243 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/model/WordleGame.cpp
 	"WordleGame.h"
+	<iostream>
+	<vector>
 
-1650572129 /home/rjones47/Desktop/HelloWorld/TeamGWordle/model/WordleGame.h
+1650980038 /home/rjones47/Desktop/HelloWorld/TeamGWordle/model/WordleGame.h
+	"../model/resources/Dictionary.h"
+	<vector>
+	<string>
+	<iostream>
 
-1650572435 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/main.cpp
+1650911359 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/main.cpp
 	<FL/Fl.H>
 	<FL/Fl_Window.H>
 	<FL/Fl_Box.H>
-	"WordleWindow.h"
+	"view/WordleWindow.h"
 
-1650606149 /home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleWindow.h
+1650979816 /home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleWindow.h
 	<FL/Fl.H>
 	<FL/Fl_Window.H>
 	<FL/Fl_Group.H>
@@ -23,8 +29,10 @@
 	<string>
 	<iostream>
 
-1650606152 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleWindow.cpp
+1650979816 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleWindow.cpp
 	"WordleWindow.h"
+	"../model/WordleGame.h"
+	"../model/resources/Dictionary.h"
 
 1650859806 source:/home/amaynar2/Downloads/TeamGWordle/main.cpp
 	<FL/Fl.H>
@@ -71,5 +79,19 @@
 	"guessChecker.h"
 
 1650935216 /home/amaynar2/Downloads/TeamGWordle/model/resources/guessChecker.h
+	<vector>
+
+1650979658 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/model/resources/Dictionary.cpp
+	"Dictionary.h"
+	<bits/stdc++.h>
+
+1650979856 /home/rjones47/Desktop/HelloWorld/TeamGWordle/model/resources/Dictionary.h
+	<vector>
+	<map>
+
+1650943615 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/model/resources/guessChecker.cpp
+	"guessChecker.h"
+
+1650943615 /home/rjones47/Desktop/HelloWorld/TeamGWordle/model/resources/guessChecker.h
 	<vector>
 
