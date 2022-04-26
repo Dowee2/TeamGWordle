@@ -7,24 +7,24 @@ using namespace std;
 
 class Dictionary
 {
-    public:
-        /** Default constructor */
-        Dictionary();
-        /** Default destructor */
-        virtual ~Dictionary();
+public:
+    /** Default constructor */
+    Dictionary();
+    /** Default destructor */
+    virtual ~Dictionary();
 
 
-        vector<string> getAllWordsOfLength(int wordlength);
+    vector<string> getAllWordsOfLength(int wordlength);
 
 
-        void Debug();
+    void Debug();
 
-    protected:
+protected:
 
-    private:
-        void generateVocabulary();
-        void addWord(string& word);
-        std::map<const int, vector<string>> vocabulary;
+private:
+    void generateVocabulary();
+    void addWord(string& word);
+    std::map<const int, vector<string>> vocabulary;
 
 };
 

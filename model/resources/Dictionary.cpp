@@ -32,8 +32,9 @@ void Dictionary::generateVocabulary()
     inputFile.close();
 }
 
-void Dictionary::addWord(string& word){
-     if(this->vocabulary.find(word.length()) != this->vocabulary.end())
+void Dictionary::addWord(string& word)
+{
+    if(this->vocabulary.find(word.length()) != this->vocabulary.end())
     {
         this->vocabulary.at(word.length()).push_back(word);
     }
@@ -58,7 +59,7 @@ void Dictionary::Debug()
         for(string currWord : veocab.second)
         {
 
-                countColumns++;
+            countColumns++;
 
 
         }
