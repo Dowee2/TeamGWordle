@@ -45,23 +45,26 @@ void WordleWindow::createKeyboard()
     {
         for (int x = 0; x < 6; x++)
         {
-            //this only does the first 24 letters of the aplhabet in buttons, because 26 doesn't divide cleanly except into 13, i can fix that when the stack smashing is fixed.
             int offset = q;
             //cout << q << endl;
             string label = this->qwertyAlphabet[q];
             this->keyboardSortingLabels[q] = new string(label);
             this->keyboardButton[25] = new Fl_Button(110 + (x * 30), 530 + (y * 30), 30, 30, keyboardSortingLabels[q]->c_str());
-            this->keyboardButton[25]->callback(cbButton, this);
+            this->keyboardButton[25]->callback(cbKeyboard, this);
             q++;
         }
     }
     this->keyboardButton[25] = new Fl_Button(110 + (2 * 30), 530 + (4 * 30), 30, 30, "N");
+    this->keyboardButton[25]->callback(cbKeyboard, this);
     this->keyboardButton[25] = new Fl_Button(110 + (3 * 30), 530 + (4 * 30), 30, 30, "M");
+    this->keyboardButton[25]->callback(cbKeyboard, this);
     this->activeInput = this->wordleInput[activeNumber];
+    this->guessButton = new Fl_Button(110, 700, 180, 30, "Guess");
+    this->guessButton->callback(cbGuess, this);
     //this->sortingRadioGroup->end();
 }
 
-void WordleWindow::cbButton(Fl_Widget* widget, void* data)
+void WordleWindow::cbKeyboard(Fl_Widget* widget, void* data)
 {
     WordleWindow* window = (WordleWindow*)data;
     Fl_Button* button = (Fl_Button*) widget;
@@ -70,6 +73,22 @@ void WordleWindow::cbButton(Fl_Widget* widget, void* data)
     window->activeInput->value(jim);
     window->activeNumber++;
     window->activeInput = window->wordleInput[window->activeNumber];
+}
+
+void WordleWindow::cbGuess(Fl_Widget* widget, void* data)
+{
+    WordleWindow* window = (WordleWindow*)data;
+    Fl_Button* button = (Fl_Button*) widget;
+    Fl_Input** input = window->getInputs();
+    string starter = "";
+    string output = starter + input[window->activeNumber - 5]->value() + input[window->activeNumber - 4]->value() + input[window->activeNumber - 3]->value() + input[window->activeNumber - 2]->value() + input[window->activeNumber - 1]->value();
+    //cout << input[window->activeNumber - 5]->value() << input[window->activeNumber - 4]->value() << input[window->activeNumber - 3]->value() << input[window->activeNumber - 2]->value() << input[window->activeNumber - 1]->value()<<endl;
+    cout << output << endl;
+}
+
+
+Fl_Input** WordleWindow::getInputs(){
+    return this->wordleInput;
 }
 }
 

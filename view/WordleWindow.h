@@ -26,6 +26,7 @@ class WordleWindow : public Fl_Window
         virtual ~WordleWindow();
         Fl_Input* activeInput;
         int activeNumber;
+        Fl_Input** getInputs();
 
 
     protected:
@@ -33,11 +34,13 @@ class WordleWindow : public Fl_Window
     private:
         Fl_Input* wordleInput[30];
         Fl_Button* keyboardButton[26];
+        Fl_Button* guessButton;
         Fl_Group *sortingRadioGroup;
         vector<string> qwertyAlphabet = {"Q", "W", "E" ,"R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Z", "X","C", "V", "B", "N", "M"};
         string* keyboardSortingLabels[26];
         static void cbTextChanged(Fl_Widget* widget, void* data);
-        static void cbButton(Fl_Widget* widget, void* data);
+        static void cbKeyboard(Fl_Widget* widget, void* data);
+        static void cbGuess(Fl_Widget* widget, void* data);
         void createKeyboard();
 
 

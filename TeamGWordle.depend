@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1650949243 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/model/WordleGame.cpp
+1651443047 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/model/WordleGame.cpp
 	"WordleGame.h"
 	<iostream>
+	"../model/resources/guessChecker.h"
 	<vector>
 
 1650980038 /home/rjones47/Desktop/HelloWorld/TeamGWordle/model/WordleGame.h
@@ -16,7 +17,7 @@
 	<FL/Fl_Box.H>
 	"view/WordleWindow.h"
 
-1650979816 /home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleWindow.h
+1651444215 /home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleWindow.h
 	<FL/Fl.H>
 	<FL/Fl_Window.H>
 	<FL/Fl_Group.H>
@@ -29,7 +30,7 @@
 	<string>
 	<iostream>
 
-1650979816 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleWindow.cpp
+1651444722 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleWindow.cpp
 	"WordleWindow.h"
 	"../model/WordleGame.h"
 	"../model/resources/Dictionary.h"
