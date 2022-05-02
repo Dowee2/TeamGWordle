@@ -26,8 +26,7 @@ WordleWindow::WordleWindow(int width, int height, const char* title) : Fl_Window
 
     Dictionary* words = new Dictionary();
     words->Debug();
-    WordleGame* game = new WordleGame(5);
-    game->makeGuess("Somer");
+    this->game = new WordleGame(5);
     end();
 }
 
@@ -82,7 +81,7 @@ void WordleWindow::cbGuess(Fl_Widget* widget, void* data)
     Fl_Input** input = window->getInputs();
     string starter = "";
     string output = starter + input[window->activeNumber - 5]->value() + input[window->activeNumber - 4]->value() + input[window->activeNumber - 3]->value() + input[window->activeNumber - 2]->value() + input[window->activeNumber - 1]->value();
-    //cout << input[window->activeNumber - 5]->value() << input[window->activeNumber - 4]->value() << input[window->activeNumber - 3]->value() << input[window->activeNumber - 2]->value() << input[window->activeNumber - 1]->value()<<endl;
+    window->game->makeGuess(output);
     cout << output << endl;
 }
 

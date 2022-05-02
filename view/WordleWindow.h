@@ -9,14 +9,15 @@
 #include <FL/Fl_Text_Buffer.H>
 #include <FL/Fl_Text_Display.H>
 #include <FL/Fl_Button.H>
+#include "../model/WordleGame.h"
 
-//#include "../model/resources/Dictionary.h"
+#include "../model/resources/Dictionary.h"
 
 #include <vector>
 #include <string>
 #include <iostream>
 using namespace std;
-//using namespace Wordle;
+using namespace Wordle;
 namespace view
 {
 class WordleWindow : public Fl_Window
@@ -42,6 +43,7 @@ class WordleWindow : public Fl_Window
         static void cbKeyboard(Fl_Widget* widget, void* data);
         static void cbGuess(Fl_Widget* widget, void* data);
         void createKeyboard();
+        WordleGame* game;
 
 
 };
