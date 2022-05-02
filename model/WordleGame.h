@@ -1,6 +1,6 @@
 #ifndef WORDLEGAME_H
 #define WORDLEGAME_H
-
+#include "../model/resources/guessChecker.h"
 #include "../model/resources/Dictionary.h"
 #include <vector>
 #include <string>
@@ -17,7 +17,7 @@ class WordleGame
 public:
     WordleGame(int wordLength);
     virtual ~WordleGame();
-    void makeGuess(string guess);
+    vector<LetterPlacement> makeGuess(string guess);
 
 protected:
 

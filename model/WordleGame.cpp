@@ -31,7 +31,7 @@ void WordleGame::generateWord(vector<string>& words)
     cout<< "The word to be guessed is: ++++++" << this->wordToBeGuessed<<" +++++++++" <<endl;
 }
 
-void WordleGame::makeGuess(string guess) {
+vector<LetterPlacement> WordleGame::makeGuess(string guess) {
     transform(guess.begin(), guess.end(), guess.begin(), ::tolower);
     vector<LetterPlacement> checks = checkGuess(guess.c_str(),this->wordToBeGuessed,this->wordLength);
     for(auto letter: checks) {
@@ -39,6 +39,7 @@ void WordleGame::makeGuess(string guess) {
     }
     cout << endl;
     this->numberOfGuesses--;
+    return checks;
     //Print out to console if the letter placement in the guess is Correct(0), Contains(1), Wrong(2)
 }
 

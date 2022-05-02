@@ -28,12 +28,12 @@ class WordleWindow : public Fl_Window
         Fl_Input* activeInput;
         int activeNumber;
         Fl_Input** getInputs();
-
+        Fl_Input* wordleInput[30];
 
     protected:
 
     private:
-        Fl_Input* wordleInput[30];
+
         Fl_Button* keyboardButton[26];
         Fl_Button* guessButton;
         Fl_Group *sortingRadioGroup;

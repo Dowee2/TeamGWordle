@@ -81,7 +81,47 @@ void WordleWindow::cbGuess(Fl_Widget* widget, void* data)
     Fl_Input** input = window->getInputs();
     string starter = "";
     string output = starter + input[window->activeNumber - 5]->value() + input[window->activeNumber - 4]->value() + input[window->activeNumber - 3]->value() + input[window->activeNumber - 2]->value() + input[window->activeNumber - 1]->value();
-    window->game->makeGuess(output);
+    auto letterChecks = window->game->makeGuess(output);
+    if (letterChecks[0] == 0) {
+        cout << "0 good" << endl;
+        input[window->activeNumber - 5]->color(FL_DARK_GREEN);
+        input[window->activeNumber - 5]->redraw();
+    } else if (letterChecks[0] == 1) {
+        input[window->activeNumber - 5]->color(FL_YELLOW);
+        input[window->activeNumber - 5]->redraw();
+    }
+    if (letterChecks[1] == 0) {
+        cout << "0 good" << endl;
+        input[window->activeNumber - 4]->color(FL_DARK_GREEN);
+        input[window->activeNumber - 4]->redraw();
+    } else if (letterChecks[1] == 1) {
+        input[window->activeNumber - 4]->color(FL_YELLOW);
+        input[window->activeNumber - 4]->redraw();
+    }
+    if (letterChecks[2] == 0) {
+        cout << "0 good" << endl;
+        input[window->activeNumber - 3]->color(FL_DARK_GREEN);
+        input[window->activeNumber - 3]->redraw();
+    } else if (letterChecks[2] == 1) {
+        input[window->activeNumber - 3]->color(FL_YELLOW);
+        input[window->activeNumber - 3]->redraw();
+    }
+    if (letterChecks[3] == 0) {
+        cout << "0 good" << endl;
+        input[window->activeNumber - 2]->color(FL_DARK_GREEN);
+        input[window->activeNumber - 2]->redraw();
+    } else if (letterChecks[3] == 1) {
+        input[window->activeNumber - 2]->color(FL_YELLOW);
+        input[window->activeNumber - 2]->redraw();
+    }
+    if (letterChecks[4] == 0) {
+        cout << "0 good" << endl;
+        input[window->activeNumber - 1]->color(FL_DARK_GREEN);
+        input[window->activeNumber - 1]->redraw();
+    } else if (letterChecks[4] == 1) {
+        input[window->activeNumber - 1]->color(FL_YELLOW);
+        input[window->activeNumber - 1]->redraw();
+    }
     cout << output << endl;
 }
 
