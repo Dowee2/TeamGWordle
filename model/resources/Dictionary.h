@@ -13,9 +13,7 @@ public:
     /** Default destructor */
     virtual ~Dictionary();
 
-
     vector<string> getAllWordsOfLength(int wordlength);
-
 
     void Debug();
 
