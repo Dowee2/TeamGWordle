@@ -11,6 +11,7 @@ class PlayerStatistics
 public:
     /** Default constructor */
     PlayerStatistics();
+    PlayerStatistics(int gamesPlayed, int streak, int highestStreak,std::map<const int,int> guessdistribution);
     /** Default destructor */
     virtual ~PlayerStatistics();
 
@@ -90,10 +91,10 @@ private:
     {
         this->guessDistributon.at(guesses)++;
     }
-    int gamesPlayed = 0; //!< Member variable "gamesPlayed"
-    int streak = 0; //!< Member variable "streak"
-    int highestStreak = 0; //!< Member variable "highestStreak"
-    std::map<const int,int> guessDistributon = {{1,0}, {2,0}, {3,0}, {4,0}, {5,0}, {6,0}}; //!< Member variable "guessDistributon"
+    int gamesPlayed; //!< Member variable "gamesPlayed"
+    int streak; //!< Member variable "streak"
+    int highestStreak; //!< Member variable "highestStreak"
+    std::map<const int,int> guessDistributon; //!< Member variable "guessDistributon"
 };
 }
 

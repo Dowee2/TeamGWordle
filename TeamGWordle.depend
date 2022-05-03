@@ -61,8 +61,10 @@
 	<algorithm>
 	<sstream>
 
-1651501692 source:/home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.cpp
+1651607887 source:/home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.cpp
 	"WordleWindow.h"
+	"WordleLoginWindow.h"
+	"PlayerTracker.h"
 	"../model/WordleGame.h"
 	"../model/resources/Dictionary.h"
 
@@ -81,7 +83,7 @@
 	<string>
 	<iostream>
 
-1650988943 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.cpp
+1651583563 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.cpp
 	"Dictionary.h"
 	<bits/stdc++.h>
 
@@ -89,7 +91,7 @@
 	<vector>
 	<map>
 
-1651503069 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/guessChecker.cpp
+1651583280 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/guessChecker.cpp
 	"guessChecker.h"
 
 1650935216 /home/amaynar2/Downloads/TeamGWordle/model/resources/guessChecker.h
@@ -115,22 +117,23 @@
 1651515499 /home/amaynar2/Downloads/TeamGWordle/model/Player.h
 	<map>
 
-1651575452 source:/home/amaynar2/Downloads/TeamGWordle/model/PlayerTracker.cpp
+1651608053 source:/home/amaynar2/Downloads/TeamGWordle/model/PlayerTracker.cpp
 	"PlayerTracker.h"
 	<fstream>
 	<sstream>
 	<iostream>
+	"Utils.h"
 
-1651570538 /home/amaynar2/Downloads/TeamGWordle/model/PlayerTracker.h
+1651583859 /home/amaynar2/Downloads/TeamGWordle/model/PlayerTracker.h
 	"PlayerStatistics.h"
 	<vector>
 	<map>
 
-1651576324 source:/home/amaynar2/Downloads/TeamGWordle/model/PlayerStatistics.cpp
+1651582994 source:/home/amaynar2/Downloads/TeamGWordle/model/PlayerStatistics.cpp
 	"PlayerStatistics.h"
 	<sstream>
 
-1651576678 /home/amaynar2/Downloads/TeamGWordle/model/PlayerStatistics.h
+1651581872 /home/amaynar2/Downloads/TeamGWordle/model/PlayerStatistics.h
 	<map>
 
 1651577230 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/Utils.cpp
@@ -139,5 +142,23 @@
 	<sstream>
 
 1651577214 /home/amaynar2/Downloads/TeamGWordle/model/resources/Utils.h
+	<string>
+
+1651577214 /home/amaynar2/Downloads/TeamGWordle/model/Utils.h
+	<string>
+
+1651582985 source:/home/amaynar2/Downloads/TeamGWordle/model/Utils.cpp
+	"Utils.h"
+	<algorithm>
+	<sstream>
+
+1651606549 source:/home/amaynar2/Downloads/TeamGWordle/view/WordleLoginWindow.cpp
+	"WordleLoginWindow.h"
+	<Fl/fl_ask.H>
+
+1651605901 /home/amaynar2/Downloads/TeamGWordle/view/WordleLoginWindow.h
+	<Fl/Fl_Window.H>
+	<Fl/Fl_Button.H>
+	<Fl/Fl_Input.H>
 	<string>
 

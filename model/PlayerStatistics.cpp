@@ -5,7 +5,18 @@ namespace model
 {
 PlayerStatistics::PlayerStatistics()
 {
-    //ctor
+    this->gamesPlayed = 0;
+    this->streak = 0;
+    this->highestStreak = 0;
+    this->guessDistributon = {{1,0}, {2,0}, {3,0}, {4,0}, {5,0}, {6,0}};
+}
+
+PlayerStatistics::PlayerStatistics(int gamesPlayed, int streak, int highestStreak,std::map<const int,int> guessdistribution)
+{
+    this->gamesPlayed = gamesPlayed;
+    this->streak = streak;
+    this->highestStreak = highestStreak;
+    this->guessDistributon = guessdistribution;
 }
 
 PlayerStatistics::~PlayerStatistics()

@@ -1,9 +1,11 @@
 #include "WordleWindow.h"
+#include "WordleLoginWindow.h"
+#include "PlayerTracker.h"
 
 #include "../model/WordleGame.h"
 #include "../model/resources/Dictionary.h"
 using namespace Wordle;
-
+using namespace model;
 namespace view {
 WordleWindow::WordleWindow(int width, int height, const char* title) : Fl_Window(width, height, title)
 {
@@ -27,6 +29,16 @@ WordleWindow::WordleWindow(int width, int height, const char* title) : Fl_Window
     Dictionary* words = new Dictionary();
     words->Debug();
     this->game = new WordleGame(5);
+    WordleLoginWindow login;
+    login.set_modal();
+    login.show();
+
+    while (login.shown())
+    {
+        Fl::wait();
+    }
+
+    PlayerTracker tracker = PlayerTracker(login.getUsername());
     end();
 }
 

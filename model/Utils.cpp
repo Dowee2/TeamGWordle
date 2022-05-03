@@ -2,7 +2,6 @@
 
 #include <algorithm>
 #include <sstream>
-
 //
 // Converts and returns string in uppercase
 //

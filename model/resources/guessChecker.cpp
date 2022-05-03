@@ -1,6 +1,5 @@
 #include "guessChecker.h"
 
-
 vector<LetterPlacement> checkGuess(const char* guess, const char* word, int wordLength)
 {
     vector<LetterPlacement> checked;

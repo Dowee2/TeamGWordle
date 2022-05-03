@@ -31,9 +31,10 @@ class PlayerTracker
     private:
         std::map<const string,PlayerStatistics*>players; //!< Member variable "players"
         void loadPlayers();
+        void savePlayers();
         void setCurrentPlayer(string playerName);
         void buildPlayers(vector<vector<string>> content);
-
+        string savefile = "model/resources/players.txt";
 };
 }
 

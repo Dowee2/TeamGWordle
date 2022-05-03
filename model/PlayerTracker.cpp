@@ -2,12 +2,15 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-#include <Utils.h>
+#include "Utils.h"
+
 namespace model
 {
 PlayerTracker::PlayerTracker(string playerName)
 {
+    this->loadPlayers();
     this->setCurrentPlayer(playerName);
+    this->savePlayers();
 }
 
 PlayerTracker::~PlayerTracker()
@@ -42,10 +45,21 @@ void PlayerTracker::updatePlayerStats(int guessesMade,int WinOrLose)
     }
 }
 
+void PlayerTracker::savePlayers()
+{
+    fstream fout;
+    fout.open(this->savefile,ios::out);
+
+    for(auto const& player : this->players)
+    {
+        fout << player.first << ", " << player.second->toString() <<"\n";
+    }
+}
+
 void PlayerTracker::loadPlayers()
 {
     fstream fin;
-    fin.open("model/resources/players.txt", ios::in);
+    fin.open(this->savefile, ios::in);
     vector<vector<string>> content;
     vector<string> row;
     string line, word;
@@ -68,31 +82,28 @@ void PlayerTracker::loadPlayers()
     {
         cout<<"Could not open the file\n";
     }
-
-
 }
 
-void PlayerTracker::buildPlayers(vector<vector<string>> content) {
- for(int i=0; i<content.size(); i++)
+void PlayerTracker::buildPlayers(vector<vector<string>> content)
+{
+    for(int i=0; i<content.size(); i++)
     {
-        int gamesPlayed = toInt(content[i][1], "Error converting year to an integer.");
-        int lastName = toInt(content[i][2], "Error converting year to an integer.");
-        int highestStreak = toInt(content[i][3], "Error converting year to an integer.");
-        int oneGuesses = toInt(content[i][4], "Error converting year to an integer.");
-        int twoGuesses = toInt(content[i][5], "Error converting year to an integer.");
-        int threeGuesses = toInt(content[i][6], "Error converting year to an integer.");
-        int fourGuesses = toInt(content[i][7], "Error converting year to an integer.");
-        int fiveGuesses = toInt(content[i][8], "Error converting year to an integer.");
-        int sixGuesses = toInt(content[i][9], "Error converting year to an integer.");
+        string playerName = content[i][0];
+        int gamesPlayed = toInt(content[i][1], "Error converting games played to an integer.");
+        int streak = toInt(content[i][2], "Error converting winning streak to an integer.");
+        int highestStreak = toInt(content[i][3], "Error converting highest win streak to an integer.");
+        int oneGuesses = toInt(content[i][4], "Error converting one guess games to an integer.");
+        int twoGuesses = toInt(content[i][5], "Error converting two guess games to an integer.");
+        int threeGuesses = toInt(content[i][6], "Error converting three guess games to an integer.");
+        int fourGuesses = toInt(content[i][7], "Error converting four guess games to an integer.");
+        int fiveGuesses = toInt(content[i][8], "Error converting five guess games to an integer.");
+        int sixGuesses = toInt(content[i][9], "Error converting six guess games to an integer.");
         std::map<const int,int> guessDistributon = {{1,oneGuesses}, {2,twoGuesses}, {3,threeGuesses}, {4,fourGuesses}, {5,fiveGuesses}, {6,sixGuesses}};
 
+        PlayerStatistics* stats = new PlayerStatistics(gamesPlayed,streak,highestStreak,guessDistributon);
 
-        PlayerStatistics`
-        cout << "Before: " << window->cards->getlength() <<endl;
-        window->cards->push(newCard);
-        cout << "After: "<< window->cards->getlength() <<endl;
+        this->players.insert(std::pair<string, PlayerStatistics*>(playerName, stats));
 
-        cout<<"\n";
     }
 }
 }
