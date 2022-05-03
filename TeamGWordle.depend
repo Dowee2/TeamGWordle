@@ -46,20 +46,29 @@
 	<FL/Fl_Box.H>
 	"view/WordleWindow.h"
 
-1650935222 source:/home/amaynar2/Downloads/TeamGWordle/model/WordleGame.cpp
+1651501692 source:/home/amaynar2/Downloads/TeamGWordle/model/WordleGame.cpp
 	"WordleGame.h"
 	<iostream>
-	"guessChecker.h"
+	"../model/resources/guessChecker.h"
 	<vector>
 
-1650932487 /home/amaynar2/Downloads/TeamGWordle/model/WordleGame.h
-	"Dictionary.h"
+1651501692 /home/amaynar2/Downloads/TeamGWordle/model/WordleGame.h
+	"../model/resources/guessChecker.h"
+	"../model/resources/Dictionary.h"
+	<vector>
+	<string>
+	<iostream>
+	<algorithm>
+	<sstream>
 
-1650933136 source:/home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.cpp
+1651608786 source:/home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.cpp
 	"WordleWindow.h"
+	"WordleLoginWindow.h"
+	"PlayerTracker.h"
 	"../model/WordleGame.h"
+	"../model/resources/Dictionary.h"
 
-1650913854 /home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.h
+1651501692 /home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.h
 	<FL/Fl.H>
 	<FL/Fl_Window.H>
 	<FL/Fl_Group.H>
@@ -68,20 +77,21 @@
 	<FL/Fl_Text_Buffer.H>
 	<FL/Fl_Text_Display.H>
 	<FL/Fl_Button.H>
-	"Dictionary.h"
+	"../model/WordleGame.h"
+	"../model/resources/Dictionary.h"
 	<vector>
 	<string>
 	<iostream>
 
-1650932339 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.cpp
+1651583563 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.cpp
 	"Dictionary.h"
 	<bits/stdc++.h>
 
-1650932337 /home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.h
+1651514573 /home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.h
 	<vector>
 	<map>
 
-1650934970 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/guessChecker.cpp
+1651583280 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/guessChecker.cpp
 	"guessChecker.h"
 
 1650935216 /home/amaynar2/Downloads/TeamGWordle/model/resources/guessChecker.h
@@ -101,3 +111,54 @@
 1650943615 /home/rjones47/Desktop/HelloWorld/TeamGWordle/model/resources/guessChecker.h
 	<vector>
 
+1651515468 source:/home/amaynar2/Downloads/TeamGWordle/model/Player.cpp
+	"Player.h"
+
+1651515499 /home/amaynar2/Downloads/TeamGWordle/model/Player.h
+	<map>
+
+1651608053 source:/home/amaynar2/Downloads/TeamGWordle/model/PlayerTracker.cpp
+	"PlayerTracker.h"
+	<fstream>
+	<sstream>
+	<iostream>
+	"Utils.h"
+
+1651583859 /home/amaynar2/Downloads/TeamGWordle/model/PlayerTracker.h
+	"PlayerStatistics.h"
+	<vector>
+	<map>
+
+1651582994 source:/home/amaynar2/Downloads/TeamGWordle/model/PlayerStatistics.cpp
+	"PlayerStatistics.h"
+	<sstream>
+
+1651581872 /home/amaynar2/Downloads/TeamGWordle/model/PlayerStatistics.h
+	<map>
+
+1651577230 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/Utils.cpp
+	"Utils.h"
+	<algorithm>
+	<sstream>
+
+1651577214 /home/amaynar2/Downloads/TeamGWordle/model/resources/Utils.h
+	<string>
+
+1651577214 /home/amaynar2/Downloads/TeamGWordle/model/Utils.h
+	<string>
+
+1651582985 source:/home/amaynar2/Downloads/TeamGWordle/model/Utils.cpp
+	"Utils.h"
+	<algorithm>
+	<sstream>
+
+1651610030 source:/home/amaynar2/Downloads/TeamGWordle/view/WordleLoginWindow.cpp
+	"WordleLoginWindow.h"
+	<Fl/fl_ask.H>
+
+1651608824 /home/amaynar2/Downloads/TeamGWordle/view/WordleLoginWindow.h
+	<FL/Fl.H>
+	<Fl/Fl_Window.H>
+	<Fl/Fl_Button.H>
+	<Fl/Fl_Input.H>
+	<string>
