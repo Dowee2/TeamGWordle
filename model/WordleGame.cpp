@@ -43,5 +43,8 @@ vector<LetterPlacement> WordleGame::makeGuess(string guess) {
     //Print out to console if the letter placement in the guess is Correct(0), Contains(1), Wrong(2)
 }
 
+    int WordleGame::getNumberOfGuesses() {
+        return this->numberOfGuesses;
+    }
 
 }
