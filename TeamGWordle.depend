@@ -115,10 +115,29 @@
 1651515499 /home/amaynar2/Downloads/TeamGWordle/model/Player.h
 	<map>
 
-1651516523 source:/home/amaynar2/Downloads/TeamGWordle/model/PlayerTracker.cpp
+1651575452 source:/home/amaynar2/Downloads/TeamGWordle/model/PlayerTracker.cpp
 	"PlayerTracker.h"
+	<fstream>
+	<sstream>
+	<iostream>
 
-1651519158 /home/amaynar2/Downloads/TeamGWordle/model/PlayerTracker.h
-	"Player.h"
+1651570538 /home/amaynar2/Downloads/TeamGWordle/model/PlayerTracker.h
+	"PlayerStatistics.h"
 	<vector>
+	<map>
+
+1651576324 source:/home/amaynar2/Downloads/TeamGWordle/model/PlayerStatistics.cpp
+	"PlayerStatistics.h"
+	<sstream>
+
+1651576678 /home/amaynar2/Downloads/TeamGWordle/model/PlayerStatistics.h
+	<map>
+
+1651577230 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/Utils.cpp
+	"Utils.h"
+	<algorithm>
+	<sstream>
+
+1651577214 /home/amaynar2/Downloads/TeamGWordle/model/resources/Utils.h
+	<string>
 

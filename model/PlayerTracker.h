@@ -1,7 +1,8 @@
 #ifndef PLAYERTRACKER_H
 #define PLAYERTRACKER_H
-#include "Player.h"
+#include "PlayerStatistics.h"
 #include <vector>
+#include <map>
 
 namespace model{
 class PlayerTracker
@@ -15,10 +16,10 @@ class PlayerTracker
         /** Access players
          * \return The current value of players
          */
-        vector<Player> getPlayers() { return players; }
+        std::map<const string,PlayerStatistics*> getPlayers() { return players; }
 
         /** The current player in the game */
-        Player currentPlayer;
+        PlayerStatistics* currentPlayer;
 
         /** Updates the current users statistics
          *
@@ -28,9 +29,11 @@ class PlayerTracker
     protected:
 
     private:
-        vector<Player> players; //!< Member variable "players"
-        void loadPlayers(string filepath);
+        std::map<const string,PlayerStatistics*>players; //!< Member variable "players"
+        void loadPlayers();
         void setCurrentPlayer(string playerName);
+        void buildPlayers(vector<vector<string>> content);
+
 };
 }
 
