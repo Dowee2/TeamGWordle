@@ -1,6 +1,7 @@
 #include "Dictionary.h"
 #include <bits/stdc++.h>
-namespace Wordle {
+namespace Wordle
+{
 Dictionary::Dictionary()
 {
     this->generateVocabulary();
