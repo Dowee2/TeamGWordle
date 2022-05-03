@@ -18,6 +18,7 @@ public:
     WordleGame(int wordLength);
     virtual ~WordleGame();
     vector<LetterPlacement> makeGuess(string guess);
+    int getNumberOfGuesses();
 
 protected:
 

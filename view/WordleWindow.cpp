@@ -20,6 +20,9 @@ WordleWindow::WordleWindow(int width, int height, const char* title) : Fl_Window
             this->wordleInput[offset]->type(FL_INPUT_TYPE);
             //this->wordleInput[offset]->callback(cbTextEntered, this);
             n++;
+            if (offset >= 5) {
+                this->wordleInput[offset]->deactivate();
+            }
         }
     }
     createKeyboard();
@@ -80,54 +83,71 @@ void WordleWindow::cbGuess(Fl_Widget* widget, void* data)
     Fl_Button* button = (Fl_Button*) widget;
     Fl_Input** input = window->getInputs();
     string starter = "";
-    string output = starter + input[window->activeNumber - 5]->value() + input[window->activeNumber - 4]->value() + input[window->activeNumber - 3]->value() + input[window->activeNumber - 2]->value() + input[window->activeNumber - 1]->value();
-    auto letterChecks = window->game->makeGuess(output);
-    if (letterChecks[0] == 0) {
-        cout << "0 good" << endl;
-        input[window->activeNumber - 5]->color(FL_DARK_GREEN);
-        input[window->activeNumber - 5]->redraw();
-    } else if (letterChecks[0] == 1) {
-        input[window->activeNumber - 5]->color(FL_YELLOW);
-        input[window->activeNumber - 5]->redraw();
-    }
-    if (letterChecks[1] == 0) {
-        cout << "0 good" << endl;
-        input[window->activeNumber - 4]->color(FL_DARK_GREEN);
-        input[window->activeNumber - 4]->redraw();
-    } else if (letterChecks[1] == 1) {
-        input[window->activeNumber - 4]->color(FL_YELLOW);
-        input[window->activeNumber - 4]->redraw();
-    }
-    if (letterChecks[2] == 0) {
-        cout << "0 good" << endl;
-        input[window->activeNumber - 3]->color(FL_DARK_GREEN);
-        input[window->activeNumber - 3]->redraw();
-    } else if (letterChecks[2] == 1) {
-        input[window->activeNumber - 3]->color(FL_YELLOW);
-        input[window->activeNumber - 3]->redraw();
-    }
-    if (letterChecks[3] == 0) {
-        cout << "0 good" << endl;
-        input[window->activeNumber - 2]->color(FL_DARK_GREEN);
-        input[window->activeNumber - 2]->redraw();
-    } else if (letterChecks[3] == 1) {
-        input[window->activeNumber - 2]->color(FL_YELLOW);
-        input[window->activeNumber - 2]->redraw();
-    }
-    if (letterChecks[4] == 0) {
-        cout << "0 good" << endl;
-        input[window->activeNumber - 1]->color(FL_DARK_GREEN);
-        input[window->activeNumber - 1]->redraw();
-    } else if (letterChecks[4] == 1) {
-        input[window->activeNumber - 1]->color(FL_YELLOW);
-        input[window->activeNumber - 1]->redraw();
-    }
+    if (window->activeNumber >= 5 && input[window->activeNumber - 5]->value() != "" && input[window->activeNumber - 4]->value() != "" && input[window->activeNumber - 3]->value() != "" && input[window->activeNumber - 2]->value() != "" && input[window->activeNumber - 1]->value() != "" && window->getGame()->getNumberOfGuesses() > 1) {
+        string output = starter + input[window->activeNumber - 5]->value() + input[window->activeNumber - 4]->value() + input[window->activeNumber - 3]->value() + input[window->activeNumber - 2]->value() + input[window->activeNumber - 1]->value();
+        auto letterChecks = window->game->makeGuess(output);
+        if (letterChecks[0] == 0) {
+            cout << "0 good" << endl;
+            input[window->activeNumber - 5]->color(FL_DARK_GREEN);
+            input[window->activeNumber - 5]->redraw();
+        } else if (letterChecks[0] == 1) {
+            input[window->activeNumber - 5]->color(FL_YELLOW);
+            input[window->activeNumber - 5]->redraw();
+        }
+        if (letterChecks[1] == 0) {
+            cout << "0 good" << endl;
+            input[window->activeNumber - 4]->color(FL_DARK_GREEN);
+            input[window->activeNumber - 4]->redraw();
+        } else if (letterChecks[1] == 1) {
+            input[window->activeNumber - 4]->color(FL_YELLOW);
+            input[window->activeNumber - 4]->redraw();
+        }
+        if (letterChecks[2] == 0) {
+            cout << "0 good" << endl;
+            input[window->activeNumber - 3]->color(FL_DARK_GREEN);
+            input[window->activeNumber - 3]->redraw();
+        } else if (letterChecks[2] == 1) {
+            input[window->activeNumber - 3]->color(FL_YELLOW);
+            input[window->activeNumber - 3]->redraw();
+        }
+        if (letterChecks[3] == 0) {
+            cout << "0 good" << endl;
+            input[window->activeNumber - 2]->color(FL_DARK_GREEN);
+            input[window->activeNumber - 2]->redraw();
+        } else if (letterChecks[3] == 1) {
+            input[window->activeNumber - 2]->color(FL_YELLOW);
+            input[window->activeNumber - 2]->redraw();
+        }
+        if (letterChecks[4] == 0) {
+            cout << "0 good" << endl;
+            input[window->activeNumber - 1]->color(FL_DARK_GREEN);
+            input[window->activeNumber - 1]->redraw();
+        } else if (letterChecks[4] == 1) {
+            input[window->activeNumber - 1]->color(FL_YELLOW);
+            input[window->activeNumber - 1]->redraw();
+        }
+    input[window->activeNumber]->activate();
+    input[window->activeNumber + 1]->activate();
+    input[window->activeNumber + 2]->activate();
+    input[window->activeNumber + 3]->activate();
+    input[window->activeNumber + 4]->activate();
+    input[window->activeNumber - 5]->deactivate();
+    input[window->activeNumber - 4]->deactivate();
+    input[window->activeNumber - 3]->deactivate();
+    input[window->activeNumber - 2]->deactivate();
+    input[window->activeNumber - 1]->deactivate();
+
     cout << output << endl;
+    }
 }
 
 
 Fl_Input** WordleWindow::getInputs(){
     return this->wordleInput;
+}
+
+WordleGame* WordleWindow::getGame(){
+    return this->game;
 }
 }
 
