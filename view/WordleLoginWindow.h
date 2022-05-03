@@ -1,6 +1,7 @@
 #ifndef WORDLELOGINWINDOW_H
 #define WORDLELOGINWINDOW_H
 
+#include <FL/Fl.H>
 #include <Fl/Fl_Window.H>
 #include <Fl/Fl_Button.H>
 #include <Fl/Fl_Input.H>

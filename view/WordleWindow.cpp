@@ -6,6 +6,7 @@
 #include "../model/resources/Dictionary.h"
 using namespace Wordle;
 using namespace model;
+
 namespace view {
 WordleWindow::WordleWindow(int width, int height, const char* title) : Fl_Window(width, height, title)
 {

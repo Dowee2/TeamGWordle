@@ -1,6 +1,7 @@
 #include "WordleLoginWindow.h"
 #include <Fl/fl_ask.H>
-namespace view {
+namespace view
+{
 
 WordleLoginWindow::WordleLoginWindow() : Fl_Window(250, 150, "Login")
 {
@@ -20,16 +21,23 @@ void WordleLoginWindow::cbLogin(Fl_Widget* widget, void* data)
     WordleLoginWindow* window = (WordleLoginWindow*)data;
     window->loginHandler();
 }
-void WordleLoginWindow::loginHandler() {
+void WordleLoginWindow::loginHandler()
+{
     try
+    {
+        if(this->usernameInput->value() != NULL)
         {
             this->username = this->usernameInput->value();
             this->hide();
+        } else {
+            Fl::error("Please enter a username");
         }
-        catch (const char* message)
-        {
-            fl_message("%s", message);
-        }
+
+    }
+    catch (const char* message)
+    {
+        fl_message("%s", message);
+    }
 }
 
 
