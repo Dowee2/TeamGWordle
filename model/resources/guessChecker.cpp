@@ -20,11 +20,11 @@ vector<LetterPlacement> checkGuess(const char* guess, const char* word, int word
                 }
                 else
                 {
-                    if(guess[i] != word[j])
-                    {
+                    //if(guess[i] != word[j])
+                    //{
                         checked[i] = LetterPlacement::CONTAINS;
                         break;
-                    }
+                    //}
                 }
             }
         }

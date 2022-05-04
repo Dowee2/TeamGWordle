@@ -21,13 +21,14 @@ WordleWindow::WordleWindow(int width, int height, const char* title) : Fl_Window
 
             this->wordleInput[offset] = new Fl_Input(110 + (j*60), 20 + (i*60), 45, 45, "");
             this->wordleInput[offset]->type(FL_INPUT_TYPE);
-            //this->wordleInput[offset]->callback(cbTextEntered, this);
+            this->wordleInput[offset]->when(FL_WHEN_ENTER_KEY);
+            this->wordleInput[offset]->callback(cbTextEntered, this);
+
             n++;
-            if (offset >= 5) {
-                this->wordleInput[offset]->deactivate();
-            }
+            this->wordleInput[offset]->deactivate();
         }
     }
+    this->wordleInput[0]->activate();
     createKeyboard();
 
     Dictionary* words = new Dictionary();
@@ -79,15 +80,50 @@ void WordleWindow::createKeyboard()
     //this->sortingRadioGroup->end();
 }
 
+void WordleWindow::cbTextEntered(Fl_Widget* widget, void* data)
+{
+    WordleWindow* window = (WordleWindow*)data;
+    Fl_Input* input = (Fl_Input*) widget;
+     const char* jim = input->value();
+     if (string(jim).length() > 1) {
+           return;
+     }
+     cout << jim << endl;
+    if (jim != "") {
+        if (window->activeInput->active()) {
+            window->activeInput->value(jim);
+        }
+        if (window->activeNumber < 29 && window->activeInput->active()) {
+            window->activeNumber++;
+        }
+        window->activeInput->deactivate();
+        window->activeInput = window->wordleInput[window->activeNumber];
+        if (window->activeNumber != 5 && window->activeNumber != 10 && window->activeNumber != 15 && window->activeNumber != 20 && window->activeNumber != 25) {
+            window->activeInput->activate();
+            window->activeInput->take_focus();
+        }
+    }
+
+}
+
 void WordleWindow::cbKeyboard(Fl_Widget* widget, void* data)
 {
     WordleWindow* window = (WordleWindow*)data;
     Fl_Button* button = (Fl_Button*) widget;
     cout << button->label() <<endl;
     const char* jim = button->label();
-    window->activeInput->value(jim);
-    window->activeNumber++;
+    if (window->activeInput->active()) {
+        window->activeInput->value(jim);
+    }
+    if (window->activeNumber < 29 && window->activeInput->active()) {
+        window->activeNumber++;
+    }
+    window->activeInput->deactivate();
     window->activeInput = window->wordleInput[window->activeNumber];
+    if (window->activeNumber != 5 && window->activeNumber != 10 && window->activeNumber != 15 && window->activeNumber != 20 && window->activeNumber != 25) {
+    window->activeInput->activate();
+    window->activeInput->take_focus();
+    }
 }
 
 void WordleWindow::cbGuess(Fl_Widget* widget, void* data)
@@ -95,10 +131,16 @@ void WordleWindow::cbGuess(Fl_Widget* widget, void* data)
     WordleWindow* window = (WordleWindow*)data;
     Fl_Button* button = (Fl_Button*) widget;
     Fl_Input** input = window->getInputs();
+    WordleGame* myGame = window->getGame();
+    int guesses = myGame->getNumberOfGuesses();
+
     string starter = "";
-    if (window->activeNumber >= 5 && input[window->activeNumber - 5]->value() != "" && input[window->activeNumber - 4]->value() != "" && input[window->activeNumber - 3]->value() != "" && input[window->activeNumber - 2]->value() != "" && input[window->activeNumber - 1]->value() != "" && window->getGame()->getNumberOfGuesses() > 1) {
+    if ((window->activeNumber == 5 || window->activeNumber == 10 || window->activeNumber == 15 || window->activeNumber == 20 || window->activeNumber == 25 || window->activeNumber == 29) && input[window->activeNumber - 5]->value() != "" && input[window->activeNumber - 4]->value() != "" && input[window->activeNumber - 3]->value() != "" && input[window->activeNumber - 2]->value() != "" && input[window->activeNumber - 1]->value() != "" && guesses > 1) {
         string output = starter + input[window->activeNumber - 5]->value() + input[window->activeNumber - 4]->value() + input[window->activeNumber - 3]->value() + input[window->activeNumber - 2]->value() + input[window->activeNumber - 1]->value();
         auto letterChecks = window->game->makeGuess(output);
+        if (window->getGame()->getNumberOfGuesses() == 1) {
+            window->activeNumber++;
+        }
         if (letterChecks[0] == 0) {
             cout << "0 good" << endl;
             input[window->activeNumber - 5]->color(FL_DARK_GREEN);
@@ -139,16 +181,20 @@ void WordleWindow::cbGuess(Fl_Widget* widget, void* data)
             input[window->activeNumber - 1]->color(FL_YELLOW);
             input[window->activeNumber - 1]->redraw();
         }
-    input[window->activeNumber]->activate();
-    input[window->activeNumber + 1]->activate();
-    input[window->activeNumber + 2]->activate();
-    input[window->activeNumber + 3]->activate();
-    input[window->activeNumber + 4]->activate();
-    input[window->activeNumber - 5]->deactivate();
-    input[window->activeNumber - 4]->deactivate();
-    input[window->activeNumber - 3]->deactivate();
-    input[window->activeNumber - 2]->deactivate();
-    input[window->activeNumber - 1]->deactivate();
+        if (window->getGame()->getNumberOfGuesses() == 1) {
+            window->activeNumber--;
+        }
+            input[window->activeNumber]->activate();
+
+//    input[window->activeNumber + 1]->activate();
+//    input[window->activeNumber + 2]->activate();
+//    input[window->activeNumber + 3]->activate();
+//    input[window->activeNumber + 4]->activate();
+//    input[window->activeNumber - 5]->deactivate();
+//    input[window->activeNumber - 4]->deactivate();
+//    input[window->activeNumber - 3]->deactivate();
+//    input[window->activeNumber - 2]->deactivate();
+//    input[window->activeNumber - 1]->deactivate();
 
     cout << output << endl;
     }
