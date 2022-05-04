@@ -9,7 +9,7 @@
 #include <sstream>
 using namespace std;
 
-namespace Wordle
+namespace model
 {
 
 class WordleGame

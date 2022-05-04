@@ -17,7 +17,7 @@
 #include <string>
 #include <iostream>
 using namespace std;
-using namespace Wordle;
+using namespace model;
 namespace view
 {
 class WordleWindow : public Fl_Window

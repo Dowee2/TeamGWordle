@@ -1,15 +1,18 @@
 #include "WordleWindow.h"
 #include "WordleLoginWindow.h"
 #include "PlayerTracker.h"
+#include "StatisticsWindow.h"
 
 #include "../model/WordleGame.h"
 #include "../model/resources/Dictionary.h"
-using namespace Wordle;
+
 using namespace model;
 
-namespace view {
+namespace view
+{
 WordleWindow::WordleWindow(int width, int height, const char* title) : Fl_Window(width, height, title)
 {
+    this->createKeyboard();
     activeNumber = 0;
     begin();
     int n = 0;
@@ -25,14 +28,12 @@ WordleWindow::WordleWindow(int width, int height, const char* title) : Fl_Window
             this->wordleInput[offset]->callback(cbTextEntered, this);
 
             n++;
-            this->wordleInput[offset]->deactivate();
+            if (offset >= 5)
+            {
+                this->wordleInput[offset]->deactivate();
+            }
         }
     }
-    this->wordleInput[0]->activate();
-    createKeyboard();
-
-    Dictionary* words = new Dictionary();
-    words->Debug();
     this->game = new WordleGame(5);
     WordleLoginWindow login;
     login.set_modal();
@@ -42,8 +43,20 @@ WordleWindow::WordleWindow(int width, int height, const char* title) : Fl_Window
     {
         Fl::wait();
     }
+    createKeyboard();
 
     PlayerTracker tracker = PlayerTracker(login.getUsername());
+    StatisticsWindow* stats = new StatisticsWindow(tracker.currentPlayer);
+    stats->set_modal();
+    stats->show();
+
+    while (stats->shown())
+    {
+        Fl::wait();
+    }
+
+
+
     end();
 }
 
@@ -135,77 +148,88 @@ void WordleWindow::cbGuess(Fl_Widget* widget, void* data)
     int guesses = myGame->getNumberOfGuesses();
 
     string starter = "";
-    if ((window->activeNumber == 5 || window->activeNumber == 10 || window->activeNumber == 15 || window->activeNumber == 20 || window->activeNumber == 25 || window->activeNumber == 29) && input[window->activeNumber - 5]->value() != "" && input[window->activeNumber - 4]->value() != "" && input[window->activeNumber - 3]->value() != "" && input[window->activeNumber - 2]->value() != "" && input[window->activeNumber - 1]->value() != "" && guesses > 1) {
+    if (window->activeNumber >= 5 && input[window->activeNumber - 5]->value() != "" && input[window->activeNumber - 4]->value() != "" && input[window->activeNumber - 3]->value() != "" && input[window->activeNumber - 2]->value() != "" && input[window->activeNumber - 1]->value() != "" && window->getGame()->getNumberOfGuesses() > 1)
+    {
         string output = starter + input[window->activeNumber - 5]->value() + input[window->activeNumber - 4]->value() + input[window->activeNumber - 3]->value() + input[window->activeNumber - 2]->value() + input[window->activeNumber - 1]->value();
         auto letterChecks = window->game->makeGuess(output);
-        if (window->getGame()->getNumberOfGuesses() == 1) {
-            window->activeNumber++;
-        }
-        if (letterChecks[0] == 0) {
+        if (letterChecks[0] == 0)
+        {
             cout << "0 good" << endl;
             input[window->activeNumber - 5]->color(FL_DARK_GREEN);
             input[window->activeNumber - 5]->redraw();
-        } else if (letterChecks[0] == 1) {
+        }
+        else if (letterChecks[0] == 1)
+        {
             input[window->activeNumber - 5]->color(FL_YELLOW);
             input[window->activeNumber - 5]->redraw();
         }
-        if (letterChecks[1] == 0) {
+        if (letterChecks[1] == 0)
+        {
             cout << "0 good" << endl;
             input[window->activeNumber - 4]->color(FL_DARK_GREEN);
             input[window->activeNumber - 4]->redraw();
-        } else if (letterChecks[1] == 1) {
+        }
+        else if (letterChecks[1] == 1)
+        {
             input[window->activeNumber - 4]->color(FL_YELLOW);
             input[window->activeNumber - 4]->redraw();
         }
-        if (letterChecks[2] == 0) {
+        if (letterChecks[2] == 0)
+        {
             cout << "0 good" << endl;
             input[window->activeNumber - 3]->color(FL_DARK_GREEN);
             input[window->activeNumber - 3]->redraw();
-        } else if (letterChecks[2] == 1) {
+        }
+        else if (letterChecks[2] == 1)
+        {
             input[window->activeNumber - 3]->color(FL_YELLOW);
             input[window->activeNumber - 3]->redraw();
         }
-        if (letterChecks[3] == 0) {
+        if (letterChecks[3] == 0)
+        {
             cout << "0 good" << endl;
             input[window->activeNumber - 2]->color(FL_DARK_GREEN);
             input[window->activeNumber - 2]->redraw();
-        } else if (letterChecks[3] == 1) {
+        }
+        else if (letterChecks[3] == 1)
+        {
             input[window->activeNumber - 2]->color(FL_YELLOW);
             input[window->activeNumber - 2]->redraw();
         }
-        if (letterChecks[4] == 0) {
+        if (letterChecks[4] == 0)
+        {
             cout << "0 good" << endl;
             input[window->activeNumber - 1]->color(FL_DARK_GREEN);
             input[window->activeNumber - 1]->redraw();
-        } else if (letterChecks[4] == 1) {
+        }
+        else if (letterChecks[4] == 1)
+        {
             input[window->activeNumber - 1]->color(FL_YELLOW);
             input[window->activeNumber - 1]->redraw();
         }
-        if (window->getGame()->getNumberOfGuesses() == 1) {
-            window->activeNumber--;
-        }
-            input[window->activeNumber]->activate();
+        input[window->activeNumber]->activate();
+        input[window->activeNumber + 1]->activate();
+        input[window->activeNumber + 2]->activate();
+        input[window->activeNumber + 3]->activate();
+        input[window->activeNumber + 4]->activate();
+        input[window->activeNumber - 5]->deactivate();
+        input[window->activeNumber - 4]->deactivate();
+        input[window->activeNumber - 3]->deactivate();
+        input[window->activeNumber - 2]->deactivate();
+        input[window->activeNumber - 1]->deactivate();
 
-//    input[window->activeNumber + 1]->activate();
-//    input[window->activeNumber + 2]->activate();
-//    input[window->activeNumber + 3]->activate();
-//    input[window->activeNumber + 4]->activate();
-//    input[window->activeNumber - 5]->deactivate();
-//    input[window->activeNumber - 4]->deactivate();
-//    input[window->activeNumber - 3]->deactivate();
-//    input[window->activeNumber - 2]->deactivate();
-//    input[window->activeNumber - 1]->deactivate();
-
-    cout << output << endl;
+        cout << output << endl;
     }
 }
 
 
-Fl_Input** WordleWindow::getInputs(){
+Fl_Input** WordleWindow::getInputs()
+{
     return this->wordleInput;
 }
 
-WordleGame* WordleWindow::getGame(){
+WordleGame* WordleWindow::getGame()
+{
     return this->game;
 }
 }

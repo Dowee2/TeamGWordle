@@ -3,7 +3,7 @@
 #include "../model/resources/guessChecker.h"
 #include <vector>
 
-namespace Wordle
+namespace model
 {
 
 WordleGame::WordleGame(int wordLength)
