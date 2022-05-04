@@ -9,7 +9,7 @@
 #include <FL/Fl_Text_Buffer.H>
 #include <FL/Fl_Text_Display.H>
 #include <FL/Fl_Button.H>
-#include "../model/WordleGame.h"
+#include "WordleGame.h"
 
 #include "../model/resources/Dictionary.h"
 
@@ -43,8 +43,10 @@ class WordleWindow : public Fl_Window
         static void cbTextChanged(Fl_Widget* widget, void* data);
         static void cbKeyboard(Fl_Widget* widget, void* data);
         static void cbGuess(Fl_Widget* widget, void* data);
+         static void cbTextEntered(Fl_Widget* widget, void* data);
         void createKeyboard();
         WordleGame* game;
+        bool guessReady;
 
 
 };
