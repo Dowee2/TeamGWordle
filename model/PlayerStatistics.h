@@ -18,7 +18,7 @@ public:
     /** Gets the amount of games played by user
      * \return The current value of gamesPlayed
      */
-    int GetGamesPlayed()
+    int getGamesPlayed()
     {
         return gamesPlayed;
     }

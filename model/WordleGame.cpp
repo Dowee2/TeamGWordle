@@ -3,7 +3,9 @@
 #include "../model/resources/guessChecker.h"
 #include <vector>
 
-namespace Wordle
+#define DIAGNOSTIC_OUTPUT
+
+namespace model
 {
 
 WordleGame::WordleGame(int wordLength)
@@ -27,8 +29,10 @@ void WordleGame::generateWord(vector<string>& words)
     this->wordToBeGuessed = words[random].c_str();
 
 
-    //Uncomment to see what would was generated to be guessed
+    #ifdef DIAGNOSTIC_OUTPUT
     cout<< "The word to be guessed is: ++++++" << this->wordToBeGuessed<<" +++++++++" <<endl;
+    #endif
+
 }
 
 vector<LetterPlacement> WordleGame::makeGuess(string guess) {

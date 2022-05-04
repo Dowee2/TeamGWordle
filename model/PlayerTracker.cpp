@@ -77,6 +77,7 @@ void PlayerTracker::loadPlayers()
             }
             content.push_back(row);
         }
+        this->buildPlayers(content);
     }
     else
     {
@@ -103,7 +104,7 @@ void PlayerTracker::buildPlayers(vector<vector<string>> content)
         PlayerStatistics* stats = new PlayerStatistics(gamesPlayed,streak,highestStreak,guessDistributon);
 
         this->players.insert(std::pair<string, PlayerStatistics*>(playerName, stats));
-
+        cout << stats->toString() << endl;
     }
 }
 }

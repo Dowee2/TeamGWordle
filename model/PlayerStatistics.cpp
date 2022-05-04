@@ -44,7 +44,7 @@ int PlayerStatistics::getWinRate()
     {
         wins += win.second;
     }
-    return (wins/this->gamesPlayed)*100;
+    return (wins)*100/this->gamesPlayed;
 }
 
 string PlayerStatistics::toString()

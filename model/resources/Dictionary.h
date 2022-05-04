@@ -4,7 +4,6 @@
 #include <map>
 
 using namespace std;
-namespace Wordle {
 class Dictionary
 {
 public:
@@ -25,5 +24,5 @@ private:
     std::map<const int, vector<string>> vocabulary;
 
 };
-}
+
 #endif // DICTIONARY_H
