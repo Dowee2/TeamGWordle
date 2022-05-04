@@ -23,12 +23,14 @@ public:
 protected:
 
 private:
+    int victory;
     Dictionary* dictionary = new Dictionary();;
     int wordLength;
     const char* wordToBeGuessed;
     void playerGuess(string guess);
     void generateWord(vector<string> &words);
     int numberOfGuesses = 6;
+    bool checkVictory();
 
 };
 }

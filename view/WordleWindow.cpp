@@ -8,8 +8,8 @@
 
 using namespace model;
 
-namespace view
-{
+namespace view {
+// Constructor for the WordleWindow
 WordleWindow::WordleWindow(int width, int height, const char* title) : Fl_Window(width, height, title)
 {
     this->createKeyboard();
@@ -57,15 +57,15 @@ WordleWindow::WordleWindow(int width, int height, const char* title) : Fl_Window
     end();
 }
 
+//Wordle window destrcutor
 WordleWindow::~WordleWindow()
 {
     //dtor
 }
 
+//Creates the keyboard for the wordle window.
 void WordleWindow::createKeyboard()
 {
-    //this->sortingRadioGroup = new Fl_Group(100,100,1000,1000);
-    //this->sortingRadioGroup->begin();
     int q = 0;
     for (int y = 0; y < 4; y++)
     {
@@ -90,6 +90,7 @@ void WordleWindow::createKeyboard()
     //this->sortingRadioGroup->end();
 }
 
+//callback for entering text into the wordle window.
 void WordleWindow::cbTextEntered(Fl_Widget* widget, void* data)
 {
     WordleWindow* window = (WordleWindow*)data;
@@ -116,6 +117,7 @@ void WordleWindow::cbTextEntered(Fl_Widget* widget, void* data)
 
 }
 
+//Call back for using the on screen keyboard.
 void WordleWindow::cbKeyboard(Fl_Widget* widget, void* data)
 {
     WordleWindow* window = (WordleWindow*)data;
@@ -136,6 +138,7 @@ void WordleWindow::cbKeyboard(Fl_Widget* widget, void* data)
     }
 }
 
+//Callback for the guess button
 void WordleWindow::cbGuess(Fl_Widget* widget, void* data)
 {
     WordleWindow* window = (WordleWindow*)data;
@@ -204,29 +207,22 @@ void WordleWindow::cbGuess(Fl_Widget* widget, void* data)
             input[window->activeNumber - 1]->color(FL_YELLOW);
             input[window->activeNumber - 1]->redraw();
         }
-        input[window->activeNumber]->activate();
-        input[window->activeNumber + 1]->activate();
-        input[window->activeNumber + 2]->activate();
-        input[window->activeNumber + 3]->activate();
-        input[window->activeNumber + 4]->activate();
-        input[window->activeNumber - 5]->deactivate();
-        input[window->activeNumber - 4]->deactivate();
-        input[window->activeNumber - 3]->deactivate();
-        input[window->activeNumber - 2]->deactivate();
-        input[window->activeNumber - 1]->deactivate();
+        if (window->getGame()->getNumberOfGuesses() == 1) {
+            window->activeNumber--;
+        }
+            input[window->activeNumber]->activate();
 
-        cout << output << endl;
+    cout << output << endl;
     }
 }
 
-
-Fl_Input** WordleWindow::getInputs()
-{
+//gets the array of inputs from the window
+Fl_Input** WordleWindow::getInputs(){
     return this->wordleInput;
 }
 
-WordleGame* WordleWindow::getGame()
-{
+//gets the wordle game from the window
+WordleGame* WordleWindow::getGame(){
     return this->game;
 }
 }
