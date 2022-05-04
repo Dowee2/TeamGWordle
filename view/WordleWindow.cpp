@@ -46,17 +46,14 @@ WordleWindow::WordleWindow(int width, int height, const char* title) : Fl_Window
     createKeyboard();
 
     PlayerTracker tracker = PlayerTracker(login.getUsername());
-    StatisticsWindow* stats = new StatisticsWindow(tracker.currentPlayer);
-    stats->set_modal();
-    stats->show();
+    //StatisticsWindow* stats = new StatisticsWindow(tracker.currentPlayer);
+    //stats->set_modal();
+    //stats->show();
 
-    while (stats->shown())
-    {
-        Fl::wait();
-    }
-
-
-
+    //while (stats->shown())
+    //{
+    //    Fl::wait();
+    //}
     end();
 }
 

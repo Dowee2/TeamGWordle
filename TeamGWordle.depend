@@ -20,13 +20,16 @@
 	<string>
 	<iostream>
 
-<<<<<<< Updated upstream
+1651621406 ated upstream
+
 1651613855 /home/rjones47/Desktop/HelloWorld/TeamGWordle/model/WordleGame.h
-=======
-1651537691 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleWindow.cpp
+
+1651630671 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleWindow.cpp
 	"WordleWindow.h"
 	"../model/WordleGame.h"
 	"../model/resources/Dictionary.h"
+	"WordleWindow.h"
+	"WordleLoginWindow.h"
 
 1650859806 source:/home/amaynar2/Downloads/TeamGWordle/main.cpp
 	<FL/Fl.H>
@@ -34,14 +37,13 @@
 	<FL/Fl_Box.H>
 	"view/WordleWindow.h"
 
-1651624352 source:/home/amaynar2/Downloads/TeamGWordle/model/WordleGame.cpp
+1651634369 source:/home/amaynar2/Downloads/TeamGWordle/model/WordleGame.cpp
 	"WordleGame.h"
 	<iostream>
 	"../model/resources/guessChecker.h"
 	<vector>
 
-1651624361 /home/amaynar2/Downloads/TeamGWordle/model/WordleGame.h
->>>>>>> Stashed changes
+1651634369 /home/amaynar2/Downloads/TeamGWordle/model/WordleGame.h
 	"../model/resources/guessChecker.h"
 	"../model/resources/Dictionary.h"
 	<vector>
@@ -50,10 +52,31 @@
 	<algorithm>
 	<sstream>
 
-<<<<<<< Updated upstream
+1651633888 shed changes
+	"../model/resources/guessChecker.h"
+	"../model/resources/Dictionary.h"
+	<vector>
+	<string>
+	<iostream>
+	<algorithm>
+	<sstream>
+	<vector>
+	"Dictionary.h"
+	<bits/stdc++.h>
+	"PlayerTracker.h"
+	"../model/WordleGame.h"
+	"../model/resources/Dictionary.h"
+	"PlayerStatistics.h"
+	<vector>
+	<map>
+	<map>
+	"Utils.h"
+	<algorithm>
+	<sstream>
+
 1650943615 /home/rjones47/Desktop/HelloWorld/TeamGWordle/model/resources/guessChecker.h
-=======
-1651632658 source:/home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.cpp
+
+1651634601 source:/home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.cpp
 	"WordleWindow.h"
 	"WordleLoginWindow.h"
 	"PlayerTracker.h"
@@ -61,7 +84,7 @@
 	"../model/WordleGame.h"
 	"../model/resources/Dictionary.h"
 
-1651624413 /home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.h
+1651634369 /home/amaynar2/Downloads/TeamGWordle/view/WordleWindow.h
 	<FL/Fl.H>
 	<FL/Fl_Window.H>
 	<FL/Fl_Group.H>
@@ -70,36 +93,31 @@
 	<FL/Fl_Text_Buffer.H>
 	<FL/Fl_Text_Display.H>
 	<FL/Fl_Button.H>
-	"../model/WordleGame.h"
+	"WordleGame.h"
 	"../model/resources/Dictionary.h"
->>>>>>> Stashed changes
 	<vector>
+	<string>
+	<iostream>
 
-<<<<<<< Updated upstream
 1651612058 /home/rjones47/Desktop/HelloWorld/TeamGWordle/model/resources/Dictionary.h
 	<vector>
 	<map>
 
-1651612058 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/model/resources/Dictionary.cpp
-=======
-1651624394 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.cpp
+1650979658 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/model/resources/Dictionary.cpp
+
+1651634369 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.cpp
 	"Dictionary.h"
 	<bits/stdc++.h>
 
-1651624403 /home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.h
+1651634369 /home/amaynar2/Downloads/TeamGWordle/model/resources/Dictionary.h
 	<vector>
 	<map>
 
-1651621406 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/guessChecker.cpp
+1651634369 source:/home/amaynar2/Downloads/TeamGWordle/model/resources/guessChecker.cpp
 	"guessChecker.h"
 
 1650935216 /home/amaynar2/Downloads/TeamGWordle/model/resources/guessChecker.h
 	<vector>
-
-1650979658 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/model/resources/Dictionary.cpp
->>>>>>> Stashed changes
-	"Dictionary.h"
-	<bits/stdc++.h>
 
 1651631041 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/model/resources/guessChecker.cpp
 	"guessChecker.h"
@@ -110,24 +128,21 @@
 	"../model/resources/guessChecker.h"
 	<vector>
 
-<<<<<<< Updated upstream
-1651630671 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleWindow.cpp
-	"WordleWindow.h"
-	"WordleLoginWindow.h"
-=======
+1651630671 inWindow.h"
+
 1651515468 source:/home/amaynar2/Downloads/TeamGWordle/model/Player.cpp
 	"Player.h"
 
 1651515499 /home/amaynar2/Downloads/TeamGWordle/model/Player.h
 	<map>
 
-1651626828 source:/home/amaynar2/Downloads/TeamGWordle/model/PlayerTracker.cpp
->>>>>>> Stashed changes
+1651634369 source:/home/amaynar2/Downloads/TeamGWordle/model/PlayerTracker.cpp
 	"PlayerTracker.h"
-	"../model/WordleGame.h"
-	"../model/resources/Dictionary.h"
+	<fstream>
+	<sstream>
+	<iostream>
+	"Utils.h"
 
-<<<<<<< Updated upstream
 1651612058 /home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleLoginWindow.h
 	<FL/Fl.H>
 	<Fl/Fl_Window.H>
@@ -136,22 +151,16 @@
 	<string>
 
 1651612058 /home/rjones47/Desktop/HelloWorld/TeamGWordle/model/PlayerTracker.h
-=======
-1651621406 /home/amaynar2/Downloads/TeamGWordle/model/PlayerTracker.h
->>>>>>> Stashed changes
-	"PlayerStatistics.h"
-	<vector>
-	<map>
 
-<<<<<<< Updated upstream
+1651621406 /home/amaynar2/Downloads/TeamGWordle/model/PlayerTracker.h
+
 1651612058 /home/rjones47/Desktop/HelloWorld/TeamGWordle/model/PlayerStatistics.h
-=======
-1651632040 source:/home/amaynar2/Downloads/TeamGWordle/model/PlayerStatistics.cpp
+
+1651634369 source:/home/amaynar2/Downloads/TeamGWordle/model/PlayerStatistics.cpp
 	"PlayerStatistics.h"
 	<sstream>
 
-1651630403 /home/amaynar2/Downloads/TeamGWordle/model/PlayerStatistics.h
->>>>>>> Stashed changes
+1651634369 /home/amaynar2/Downloads/TeamGWordle/model/PlayerStatistics.h
 	<map>
 
 1651612058 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/model/PlayerStatistics.cpp
@@ -165,32 +174,27 @@
 	<iostream>
 	"Utils.h"
 
-<<<<<<< Updated upstream
 1651612058 /home/rjones47/Desktop/HelloWorld/TeamGWordle/model/Utils.h
 	<string>
 
 1651612058 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/model/Utils.cpp
-=======
+
 1651621406 /home/amaynar2/Downloads/TeamGWordle/model/Utils.h
 	<string>
 
 1651621406 source:/home/amaynar2/Downloads/TeamGWordle/model/Utils.cpp
->>>>>>> Stashed changes
-	"Utils.h"
-	<algorithm>
-	<sstream>
 
-<<<<<<< Updated upstream
 1651612058 source:/home/rjones47/Desktop/HelloWorld/TeamGWordle/view/WordleLoginWindow.cpp
 	"WordleLoginWindow.h"
 	<Fl/fl_ask.H>
 
-=======
-1651633324 source:/home/amaynar2/Downloads/TeamGWordle/view/WordleLoginWindow.cpp
+1651612058 .H>
+
+1651634369 source:/home/amaynar2/Downloads/TeamGWordle/view/WordleLoginWindow.cpp
 	"WordleLoginWindow.h"
 	<Fl/fl_ask.H>
 
-1651634206 /home/amaynar2/Downloads/TeamGWordle/view/WordleLoginWindow.h
+1651634369 /home/amaynar2/Downloads/TeamGWordle/view/WordleLoginWindow.h
 	<FL/Fl.H>
 	<Fl/Fl_Window.H>
 	<Fl/Fl_Button.H>
@@ -198,12 +202,12 @@
 	<Fl/Fl_File_Chooser.H>
 	<string>
 
-1651631961 source:/home/amaynar2/Downloads/TeamGWordle/view/StatisticsWindow.cpp
+1651634369 source:/home/amaynar2/Downloads/TeamGWordle/view/StatisticsWindow.cpp
 	"StatisticsWindow.h"
 	<FL/fl_draw.H>
 	<iostream>
 
-1651633888 /home/amaynar2/Downloads/TeamGWordle/view/StatisticsWindow.h
+1651634369 /home/amaynar2/Downloads/TeamGWordle/view/StatisticsWindow.h
 	<FL/Fl.H>
 	<Fl/Fl_Window.H>
 	<Fl/Fl_Button.H>
@@ -211,4 +215,3 @@
 	<FL/Fl_Text_Display.H>
 	"PlayerStatistics.h"
 
->>>>>>> Stashed changes
